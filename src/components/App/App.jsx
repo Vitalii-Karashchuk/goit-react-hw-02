@@ -6,24 +6,24 @@ import Feedback from '../Feedback/Feedback';
 import css from '../App/App.module.css';
 
 export default function App() {
-  const [click, useClick] = useState({
+  const [clicks, useClicks] = useState({
     good: 0,
     neutral: 0,
     bad: 0,
   });
-  const updateFeedback = () => {
-    useClick(click + 1);
+  const [click, useClick] = useState(0);
+  const updateFeedback = (feedbackType) => {
+    useClick(() => {
+      return { ...click, [feedbackType]: click[feedbackType] + 1 };
+    });
   };
 
   return (
     <>
       <Description />
 
-      <Options feedbackType="Good" />
-      <Options feedbackType="Neutral" />
-      <Options feedbackType="Bad" />
-      <Options feedbackType="Reset" />
-      <Feedback />
+      <Options onUpdateFeedback={updateFeedback} />
+      <Feedback onUpdateFeedback={updateFeedback} />
     </>
   );
 }
