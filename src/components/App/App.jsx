@@ -22,7 +22,7 @@ export default function App() {
       <Description />
 
       <Options onUpdateFeedback={updateFeedback} />
-      <Feedback onUpdateFeedback={updateFeedback} />
+      <Feedback clicks={clicks} />
     </>
   );
 }
