@@ -2,9 +2,9 @@ export default function Feedback({ onUpdateFeedback }) {
   return (
     <div>
       <ul>
-        <li onClick={() => onUpdateFeedback('Good')}>Good:</li>
-        <li onClick={() => onUpdateFeedback('Neutral')}>Neutral:</li>
-        <li onClick={() => onUpdateFeedback('Bad')}>Bad:</li>
+        <li onClick={() => onUpdateFeedback('good')}>Good:</li>
+        <li onClick={() => onUpdateFeedback('neutral')}>Neutral:</li>
+        <li onClick={() => onUpdateFeedback('bad')}>Bad:</li>
         {/* <li>Total:</li>
         <li>Positive:</li> */}
       </ul>

@@ -11,10 +11,9 @@ export default function App() {
     neutral: 0,
     bad: 0,
   });
-  const [click, useClick] = useState(0);
   const updateFeedback = (feedbackType) => {
-    useClick(() => {
-      return { ...click, [feedbackType]: click[feedbackType] + 1 };
+    useClicks(() => {
+      return { ...clicks, [feedbackType]: clicks[feedbackType] + 1 };
     });
   };
 
